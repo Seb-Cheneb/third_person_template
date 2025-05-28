@@ -1,0 +1,9 @@
+[submodule "scripts/input"]
+	path = scripts/input
+	url = https://github.com/Seb-Cheneb/input
+[submodule "scripts/patterns"]
+	path = scripts/patterns
+	url = https://github.com/Seb-Cheneb/patterns
+[submodule "scripts/debuggers"]
+	path = scripts/debuggers
+	url = https://github.com/Seb-Cheneb/debuggers
