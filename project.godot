@@ -14,3 +14,14 @@ config/name="third_person_template"
 run/main_scene="uid://d1io2bqb55cmb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "yellow",
+"res://components/": "red",
+"res://configs/": "red",
+"res://levels/": "green",
+"res://scenes/": "green",
+"res://scripts/": "red"
+}
