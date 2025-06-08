@@ -6,9 +6,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bcx1r"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("_camera_component")]
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_gpsrr")
-_camera_component = NodePath("CameraComponent")
 
 [node name="CameraComponent" parent="." instance=ExtResource("2_c45mk")]
 

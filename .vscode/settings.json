@@ -1,4 +1,8 @@
 {
     "godotTools.editorPath.godot4": "/home/murderbot/Documents/godot/Godot_v4.4.1-stable_linux.x86_64",
-    "godotTools.lsp.serverPort": 6005
+    "godotTools.lsp.serverPort": 6005,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.patterns": {
+        "*.gd": "${basename}.gd.uid"
+    },
 }
