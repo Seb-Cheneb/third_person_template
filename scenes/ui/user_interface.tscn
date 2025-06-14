@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://80s4bwsuj4hn"]
+
+[ext_resource type="Texture2D" path="res://assets/UI/kenney_ui-pack-rpg-expansion/PNG/panel_blue.png" id="1_284y0"]
+[ext_resource type="Texture2D" path="res://assets/UI/kenney_ui-pack-rpg-expansion/PNG/buttonRound_grey.png" id="2_hj6hg"]
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="InfoBar" type="Control" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HealthBarUnder" type="TextureRect" parent="MarginContainer/InfoBar"]
+layout_mode = 0
+offset_right = 245.475
+offset_bottom = 38.2
+texture = ExtResource("1_284y0")
+expand_mode = 1
+
+[node name="HealthBarOver" type="TextureRect" parent="MarginContainer/InfoBar"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 38.0
+offset_bottom = 39.0
+texture = ExtResource("2_hj6hg")

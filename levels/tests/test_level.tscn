@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1io2bqb55cmb"]
+[gd_scene load_steps=11 format=3 uid="uid://d1io2bqb55cmb"]
 
-[ext_resource type="PackedScene" uid="uid://cfgenm7awmq5g" path="res://scenes/characters/player/third_person_player.tscn" id="1_8mkes"]
+[ext_resource type="PackedScene" uid="uid://cfgenm7awmq5g" path="res://scenes/characters/player/player.tscn" id="1_8mkes"]
 [ext_resource type="PackedScene" uid="uid://b6ighjc7y6lbh" path="res://assets/Environment/Rock_Cliff_Env_03.glb" id="2_3poe7"]
+[ext_resource type="PackedScene" uid="uid://c4e6sy52iqgt3" path="res://scenes/characters/enemies/enemy.tscn" id="2_rja1q"]
 [ext_resource type="PackedScene" uid="uid://ofb206ucohyo" path="res://assets/Environment/Topiary_Tree_Vege_01.glb" id="3_0k8on"]
 [ext_resource type="PackedScene" uid="uid://bdryeyd5tymda" path="res://assets/Environment/Bush_Vege_2.glb" id="4_rja1q"]
 [ext_resource type="PackedScene" uid="uid://qs5c76m8gqxd" path="res://assets/Environment/Tree_Group_Vege.glb" id="5_c6y87"]
@@ -33,6 +34,21 @@ environment = SubResource("Environment_x25rp")
 
 [node name="Player" parent="." instance=ExtResource("1_8mkes")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25809, 0)
+
+[node name="Enemies" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.17607, 1, 1.62216)
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_rja1q")]
+transform = Transform3D(0.365608, 0, -0.930769, 0, 1, 0, 0.930769, 0, 0.365608, 4.05997, 0, -3.28783)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("2_rja1q")]
+transform = Transform3D(0.834598, 0, 0.55086, 0, 1, 0, -0.55086, 0, 0.834598, -8.46566, 0, -6.03901)
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource("2_rja1q")]
+transform = Transform3D(-0.582109, -6.17955e-11, -0.813111, -3.59367e-11, 1, -5.02717e-11, 0.813111, -4.42918e-14, -0.582109, 1.64194, 0, 4.13453)
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource("2_rja1q")]
+transform = Transform3D(-0.956798, -1.97664e-11, 0.290752, -3.59367e-11, 1, -5.02717e-11, -0.290752, -5.85489e-11, -0.956798, -5.83792, 0, 3.02724)
 
 [node name="Map" type="Node3D" parent="."]
 

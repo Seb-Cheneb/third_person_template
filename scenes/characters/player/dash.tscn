@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://blmxh7pibyffg"]
+
+[sub_resource type="Curve" id="Curve_jhovj"]
+_data = [Vector2(0.415225, 0.76983), 0.0, 0.0, 0, 0, Vector2(0.615917, 0.696176), -1.08603, -1.08603, 0, 0, Vector2(0.882353, 0.152974), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_xq3x0"]
+curve = SubResource("Curve_jhovj")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bi77a"]
+emission_shape_scale = Vector3(1, 0.25, 1)
+emission_shape = 1
+emission_sphere_radius = 0.5
+gravity = Vector3(0, 1, 0)
+damping_max = 1.0
+scale_min = 0.2
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_xq3x0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhovj"]
+emission_enabled = true
+emission = Color(0.601223, 0.601223, 0.601223, 1)
+emission_energy_multiplier = 0.5
+
+[sub_resource type="SphereMesh" id="SphereMesh_f525n"]
+material = SubResource("StandardMaterial3D_jhovj")
+
+[node name="Dash" type="Node3D"]
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+cast_shadow = 0
+emitting = false
+amount = 24
+lifetime = 0.5
+process_material = SubResource("ParticleProcessMaterial_bi77a")
+draw_pass_1 = SubResource("SphereMesh_f525n")
