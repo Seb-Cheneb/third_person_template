@@ -36,7 +36,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	camera_component.on_physics_process()
 	var direction := get_movement_direction()
-	rig.update_animation_tree(direction)
+	#rig.update_animation_tree(direction)
 	handle_idle_physics_frame(delta, direction)
 	handle_slashing_physics_frame(delta)
 	handle_overhead_physics_frame(delta)
