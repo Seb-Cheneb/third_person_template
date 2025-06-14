@@ -73,7 +73,7 @@ func get_max_hp() -> int:
 		
 func get_dash_cooldown() -> float:
 	var dash_cooldown: float = agility.percentile_lerp(MIN_DASH_COOLDOWN, MAX_DASH_COOLDOWN)
-	Logger.log_warning(is_debugging, self, "dash cooldown = " + str(dash_cooldown))
+	Logger.info(is_debugging, self, "dash cooldown = " + str(dash_cooldown))
 	return dash_cooldown
 	
 
