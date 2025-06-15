@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 VfxManager="*res://scenes/managers/vfx_manager.tscn"
 Logger="*res://scripts/debuggers/debugger.gd"
+MathManager="*res://scripts/managers/math_manager.gd"
 
 [display]
 

@@ -84,6 +84,7 @@ func slash_attack() -> void:
 
 func handle_slashing_physics_frame(delta: float) -> void:
 	if not rig.is_slashing():
+		rig.update_animation_tree(get_movement_direction())
 		return
 	# set the direction of the rig
 	velocity.x = attack_direction.x * attack_move_speed
