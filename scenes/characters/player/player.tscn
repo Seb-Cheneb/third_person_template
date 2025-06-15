@@ -1,11 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cfgenm7awmq5g"]
+[gd_scene load_steps=15 format=3 uid="uid://cfgenm7awmq5g"]
 
-[ext_resource type="Script" uid="uid://mrk7aw2765yo" path="res://scripts/characters/player/player.gd" id="1_686vu"]
+[ext_resource type="Script" uid="uid://btdidws2m8hbd" path="res://scripts/characters/character.gd" id="1_bsn6e"]
 [ext_resource type="Script" uid="uid://b832o35vo1f4e" path="res://scripts/resources/character_stats.gd" id="2_42irl"]
 [ext_resource type="PackedScene" uid="uid://dho70dyvirild" path="res://components/third_person_camera.tscn" id="2_hss88"]
 [ext_resource type="PackedScene" uid="uid://blmxh7pibyffg" path="res://scenes/characters/player/dash.tscn" id="3_mk55u"]
 [ext_resource type="PackedScene" uid="uid://cbomveynt41s0" path="res://scenes/characters/player/rig.tscn" id="3_qd3e3"]
-[ext_resource type="Script" uid="uid://brx6oet3ilv0p" path="res://scripts/characters/dash.gd" id="4_xuses"]
 [ext_resource type="PackedScene" uid="uid://cs5no2ji8gja0" path="res://components/health_component.tscn" id="5_qd3e3"]
 [ext_resource type="PackedScene" uid="uid://cq2cth7cph4yf" path="res://scenes/characters/player/area_attack.tscn" id="6_42irl"]
 [ext_resource type="PackedScene" uid="uid://80s4bwsuj4hn" path="res://scenes/ui/user_interface.tscn" id="10_3xnwo"]
@@ -14,19 +13,18 @@
 [ext_resource type="Script" uid="uid://db8aphq3hlv8i" path="res://scripts/characters/character_states/idle_state.gd" id="12_blysn"]
 [ext_resource type="Script" uid="uid://ixx4wq8unnvl" path="res://scripts/characters/character_states/walk_state.gd" id="13_blysn"]
 
-[sub_resource type="Resource" id="Resource_42irl"]
+[sub_resource type="Resource" id="Resource_blysn"]
 script = ExtResource("2_42irl")
 is_debugging = true
 metadata/_custom_type_script = "uid://b832o35vo1f4e"
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bcx1r"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("camera_component") groups=["Player"]]
+[node name="Player" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 4
 collision_mask = 9
-script = ExtResource("1_686vu")
-camera_component = NodePath("CameraComponent")
-character_stats = SubResource("Resource_42irl")
+script = ExtResource("1_bsn6e")
+character_stats = SubResource("Resource_blysn")
 
 [node name="HealthComponent" parent="." node_paths=PackedStringArray("body") instance=ExtResource("5_qd3e3")]
 body = NodePath("..")
@@ -45,37 +43,37 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.989041, 0)
 [node name="Rig" parent="RigPivot" instance=ExtResource("3_qd3e3")]
 
 [node name="Skeleton3D" parent="RigPivot/Rig/CharacterRig/GameRig" index="0"]
-bones/0/position = Vector3(3.37508e-15, 0.892027, -0.0481736)
-bones/2/rotation = Quaternion(-0.00485148, -0.000464859, 0.00321579, 0.999983)
-bones/3/rotation = Quaternion(-0.099424, -0.000418187, 0.00851803, 0.995009)
-bones/4/rotation = Quaternion(0.279192, 1.41751e-08, 9.63306e-08, 0.960235)
-bones/6/rotation = Quaternion(-0.153426, -1.18084e-07, -1.64387e-08, 0.98816)
-bones/7/position = Vector3(-3.70711e-08, 0.892027, -0.0481735)
-bones/8/position = Vector3(-5.2848e-08, 0.892027, -0.0481735)
-bones/9/position = Vector3(0.131144, 0.958232, -0.0351291)
-bones/9/rotation = Quaternion(0.99249, 0.0211343, -0.0308268, 0.116476)
-bones/11/rotation = Quaternion(0.431397, -0.000700565, 0.000335134, 0.902162)
-bones/13/rotation = Quaternion(-0.756371, 0.0119031, 0.0244303, 0.653578)
-bones/15/position = Vector3(-0.131144, 0.958232, -0.0351291)
-bones/15/rotation = Quaternion(0.97206, -0.00599405, 0.0271746, 0.233078)
-bones/17/rotation = Quaternion(0.45474, 0.00335355, -0.00171238, 0.890616)
-bones/19/rotation = Quaternion(-0.692445, -0.028215, -0.000428305, 0.720919)
-bones/21/position = Vector3(0.0251286, 1.4228, 0.0407376)
-bones/21/rotation = Quaternion(-0.501401, -0.254577, -0.394148, 0.726935)
-bones/22/position = Vector3(0.187341, 1.45829, -0.0289705)
-bones/22/rotation = Quaternion(0.0602512, -0.158084, 0.973854, -0.151615)
-bones/23/rotation = Quaternion(8.58532e-08, -0.00735732, 4.35672e-09, 0.999973)
-bones/24/rotation = Quaternion(0.279194, -0.00733996, -0.0167216, 0.960061)
-bones/46/position = Vector3(-0.0113635, 1.4228, 0.0407376)
-bones/46/rotation = Quaternion(-0.526895, 0.202915, 0.35858, 0.74339)
-bones/47/position = Vector3(-0.16237, 1.45844, -0.0507272)
-bones/47/rotation = Quaternion(-0.100172, -0.13247, 0.970959, 0.172205)
-bones/48/rotation = Quaternion(3.63037e-08, -0.0035059, 6.31718e-09, 0.999994)
-bones/49/rotation = Quaternion(0.309045, -0.00350547, 0.0285355, 0.950613)
-bones/71/position = Vector3(0.127191, 1.33984, -0.0270499)
-bones/71/rotation = Quaternion(1.89524e-08, 0.618228, 0.785999, -4.66087e-08)
-bones/72/position = Vector3(-0.113426, 1.33984, -0.0270499)
-bones/72/rotation = Quaternion(1.89525e-08, 0.618228, 0.785999, -4.66086e-08)
+bones/0/position = Vector3(9.18988e-15, 0.894891, -0.0481735)
+bones/2/rotation = Quaternion(-0.00326299, -0.000439116, 0.00321524, 0.99999)
+bones/3/rotation = Quaternion(-0.0977457, -0.000396379, 0.00851923, 0.995175)
+bones/4/rotation = Quaternion(0.278152, 1.45947e-08, 9.44615e-08, 0.960537)
+bones/6/rotation = Quaternion(-0.154643, -1.17488e-07, -2.02717e-08, 0.987971)
+bones/7/position = Vector3(-2.91712e-08, 0.89489, -0.0481735)
+bones/8/position = Vector3(-5.4614e-08, 0.89489, -0.0481735)
+bones/9/position = Vector3(0.131144, 0.961095, -0.0351291)
+bones/9/rotation = Quaternion(0.992768, 0.0209987, -0.0308899, 0.114094)
+bones/11/rotation = Quaternion(0.425934, -0.000700664, 0.000330001, 0.904754)
+bones/13/rotation = Quaternion(-0.75406, 0.0118946, 0.0244175, 0.656244)
+bones/15/position = Vector3(-0.131144, 0.961095, -0.0351291)
+bones/15/rotation = Quaternion(0.972583, -0.00589707, 0.0272422, 0.230879)
+bones/17/rotation = Quaternion(0.449626, 0.00332335, -0.00167302, 0.893209)
+bones/19/rotation = Quaternion(-0.690521, -0.028205, -0.000567293, 0.722762)
+bones/21/position = Vector3(0.0251286, 1.42519, 0.0416459)
+bones/21/rotation = Quaternion(-0.496483, -0.256663, -0.397724, 0.72763)
+bones/22/position = Vector3(0.18805, 1.46168, -0.0259199)
+bones/22/rotation = Quaternion(0.0540978, -0.159039, 0.974216, -0.150614)
+bones/23/rotation = Quaternion(9.95852e-08, -0.0124901, -1.50211e-08, 0.999922)
+bones/24/rotation = Quaternion(0.291057, -0.0124908, -0.0176712, 0.956461)
+bones/46/position = Vector3(-0.0113635, 1.42519, 0.0416459)
+bones/46/rotation = Quaternion(-0.517908, 0.213067, 0.36785, 0.742334)
+bones/47/position = Vector3(-0.165189, 1.46203, -0.0444891)
+bones/47/rotation = Quaternion(-0.0858291, -0.134998, 0.972332, 0.170231)
+bones/48/rotation = Quaternion(-7.76111e-08, 0.00633077, -1.30311e-07, 0.99998)
+bones/49/rotation = Quaternion(0.322711, 0.00633117, 0.0288334, 0.946037)
+bones/71/position = Vector3(0.127191, 1.34324, -0.02664)
+bones/71/rotation = Quaternion(1.9163e-08, 0.615166, 0.788397, -4.64969e-08)
+bones/72/position = Vector3(-0.113426, 1.34324, -0.02664)
+bones/72/rotation = Quaternion(1.91692e-08, 0.615077, 0.788467, -4.64934e-08)
 
 [node name="Knight_01" parent="RigPivot/Rig/CharacterRig/GameRig/Skeleton3D" index="0"]
 visible = false
@@ -84,13 +82,13 @@ visible = false
 visible = true
 
 [node name="RightHandBone" parent="RigPivot/Rig" index="2"]
-transform = Transform3D(-0.962344, -0.270799, -0.0237173, 0.247043, -0.907642, 0.339347, -0.113422, 0.32071, 0.940362, -0.336186, 0.972197, -0.0510016)
+transform = Transform3D(-0.962343, -0.270803, -0.0237132, 0.243464, -0.897407, 0.36795, -0.120922, 0.348321, 0.929543, -0.339006, 0.978458, -0.0379047)
 
 [node name="LeftHandBone" parent="RigPivot/Rig" index="3"]
-transform = Transform3D(-0.970549, 0.238987, 0.0303329, -0.225376, -0.945237, 0.23608, 0.0850917, 0.222291, 0.97126, 0.34412, 0.962122, -0.0636095)
+transform = Transform3D(-0.970513, 0.239109, 0.030521, -0.223145, -0.939085, 0.261393, 0.0911633, 0.246875, 0.96475, 0.344861, 0.967149, -0.0544286)
 
 [node name="AreaAttack" parent="RigPivot/Rig" instance=ExtResource("6_42irl")]
-debug_mode = true
+script = null
 
 [node name="AttackCast" type="RayCast3D" parent="RigPivot/Rig"]
 unique_name_in_owner = true
@@ -99,11 +97,8 @@ script = ExtResource("10_djydg")
 debug = true
 metadata/_custom_type_script = "uid://c8qp0aj1f1nnq"
 
-[node name="Dash" parent="RigPivot" node_paths=PackedStringArray("player") instance=ExtResource("3_mk55u")]
+[node name="Dash" parent="RigPivot" instance=ExtResource("3_mk55u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0135566, 0)
-script = ExtResource("4_xuses")
-player = NodePath("../..")
-speed_multiplier = 2.2
 
 [node name="UserInterface" parent="." instance=ExtResource("10_3xnwo")]
 
@@ -128,6 +123,7 @@ rig_pivot = NodePath("../../RigPivot")
 camera_component = NodePath("../../CameraComponent")
 animation_tree = NodePath("../../RigPivot/Rig/AnimationTree")
 blendspace = "MoveSpace"
+animation_speed = 30.0
 is_debugging = true
 
 [connection signal="defeat" from="HealthComponent" to="." method="_on_health_component_defeat"]

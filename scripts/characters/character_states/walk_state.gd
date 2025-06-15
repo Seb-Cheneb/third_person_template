@@ -1,7 +1,7 @@
 class_name WalkState
 extends State
 
-@export var actor: CharacterBody3D
+@export var actor: Character
 @export var rig_pivot: Node3D
 @export var camera_component: ThirdPersonCamera
 
@@ -30,8 +30,8 @@ func _physics_process(delta : float) -> void:
 	var direction = get_movement_direction()
 	#actor.velocity.x = exponential_decay(actor.velocity.x, direction.x * character_stats.get_base_speed(), decay, delta)
 	#actor.velocity.z = exponential_decay(actor.velocity.z, direction.z * character_stats.get_base_speed(), decay, delta)
-	actor.velocity.x = MathManager.exponential_decay(actor.velocity.x, direction.x, animation_decay, delta)
-	actor.velocity.z = MathManager.exponential_decay(actor.velocity.z, direction.z, animation_decay, delta)
+	actor.velocity.x = MathManager.exponential_decay(actor.velocity.x, direction.x * actor.character_stats.get_base_speed(), animation_decay, delta)
+	actor.velocity.z = MathManager.exponential_decay(actor.velocity.z, direction.z * actor.character_stats.get_base_speed(), animation_decay, delta)
 	actor.move_and_slide()
 	
 	
