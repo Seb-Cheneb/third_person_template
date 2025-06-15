@@ -1,46 +1,45 @@
-class_name IdleState
+class_name WalkState
 extends State
 
-
+@export var actor: CharacterBody3D
 @export var rig_pivot: Node3D
 @export var camera_component: ThirdPersonCamera
 
 @export_category("Animation")
-
 @export var animation_tree: AnimationTree
 @export var blendspace: String
-@export var blendspace_value: float = -1
-@export var animation_decay: float = 20
+@export var blendspace_value: float = 1
 @export var animation_speed: float = 10
 
 ## the direction the actor is looking at
 var direction: Vector3 = Vector3.ZERO
+var animation_playback: AnimationNodeStateMachinePlayback
+
+
+func _ready() -> void:
+	super._ready()
+	blendspace = "parameters/" + blendspace + "/blend_position"
+	Logger.info(is_debugging, self, "blendspace set to \"" + blendspace + "\"")
+
+
+func _physics_process(delta : float) -> void:
+	# gradually set the blendspace value to the desired value
+	animation_tree[blendspace] = move_toward(animation_tree[blendspace], blendspace_value, delta * animation_speed)
+	actor.move_and_slide()
+	
+	
+func _unhandled_input(event: InputEvent) -> void:
+	pass
+	#if event in ["move_left", "move_right", "move_forward", "move_back"]:
+		#var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
+		#var input_vector := Vector3(input_dir.x, 0, input_dir.y).normalized()
+		#var direction := camera_component.horizontal_pivot.global_transform.basis * input_vector
+		#change_state_signal.emit("Walk", direction)
 
 
 func enter() -> void:
-	pass
+	super.enter()
 
 
 func exit() -> void:
-	pass
-
-
-func on_ready() -> void:
-	pass
-
-	
-func on_process(delta : float) -> void:
-	pass
-
-
-func on_physics_process(delta : float) -> void:
-	pass
-	#animation_tree[blendspace] = move_toward(animation_tree[blendspace], blendspace_value, delta * animation_speed)
-	
-
-func on_unhandled_input(event: InputEvent) -> void:
-	if event in ["move_left", "move_right", "move_forward", "move_back"]:
-		var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-		var input_vector := Vector3(input_dir.x, 0, input_dir.y).normalized()
-		var direction := camera_component.horizontal_pivot.global_transform.basis * input_vector
-		change_state_signal.emit("Walk", direction)
+	super.exit()
