@@ -12,10 +12,6 @@ extends State
 @export var blendspace_value: float = -1
 @export var animation_speed: float = 10
 
-## the direction the actor is looking at
-var direction: Vector3 = Vector3.ZERO
-var animation_playback: AnimationNodeStateMachinePlayback
-
 
 func _ready() -> void:
 	super._ready()
@@ -32,8 +28,7 @@ func _physics_process(delta : float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	if input_dir != Vector2.ZERO:
-		change_state_signal.emit("Walk")
-		Logger.info(is_debugging, self, "movement input detected - changing to Walk state")
+		change_state_signal.emit("walk")
 
 
 func enter() -> void:
