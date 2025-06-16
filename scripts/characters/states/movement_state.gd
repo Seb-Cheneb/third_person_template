@@ -63,7 +63,7 @@ func update_movement(delta: float) -> void:
 		movement_decay, 
 		delta
 	)
-	actor.velocity.z = MathManager.exponential_decay(
+	actor.velocity.z = MathManager.exponential_decay( 
 		actor.velocity.z, 
 		movement_direction.z * target_speed, 
 		movement_decay, 
