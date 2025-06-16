@@ -1,7 +1,8 @@
 class_name MovementState
 extends State
 
-@export var actor: Character
+
+@export var actor: PlayerCharacter
 @export_category("Animation")
 @export var animation_tree: AnimationTree
 @export var blendspace: String:
@@ -15,22 +16,35 @@ extends State
 @export var movement_decay: float = 8.0
 @export var rotation_decay: float = 10.0
 
-# Current target blendspace value
+# This state's movement direction
+var movement_direction: Vector3 = Vector3.ZERO
 var target_blendspace_value: float
 
+
 func _physics_process(delta: float) -> void:
+	update_movement_direction()
 	update_animation_target()
 	update_animation_blendspace(delta)
 	update_movement(delta)
 	update_rotation(delta)
+	
+	actor.apply_gravity(delta)
 	actor.move_and_slide()
 
+
+func update_movement_direction() -> void:
+	# Only recalculate if input changed
+	if actor.input_changed:
+		if actor.input_direction.is_zero_approx():
+			movement_direction = Vector3.ZERO
+		else:
+			var input_vector = Vector3(actor.input_direction.x, 0, actor.input_direction.y).normalized()
+			movement_direction = actor.camera_component.horizontal_pivot.global_transform.basis * input_vector
+
+
 func update_animation_target() -> void:
-	# Determine which animation we should be playing
-	if actor.movement_direction.is_zero_approx():
-		target_blendspace_value = idle_blendspace_value
-	else:
-		target_blendspace_value = running_blendspace_value
+	target_blendspace_value = idle_blendspace_value if movement_direction.is_zero_approx() else running_blendspace_value
+
 
 func update_animation_blendspace(delta: float) -> void:
 	animation_tree[blendspace] = move_toward(
@@ -39,27 +53,28 @@ func update_animation_blendspace(delta: float) -> void:
 		delta * animation_speed
 	)
 
+
 func update_movement(delta: float) -> void:
-	var target_speed = actor.character_stats.get_base_speed() if not actor.movement_direction.is_zero_approx() else 0.0
+	var target_speed = actor.character_stats.get_base_speed() if not movement_direction.is_zero_approx() else 0.0
 	
 	actor.velocity.x = MathManager.exponential_decay(
 		actor.velocity.x, 
-		actor.movement_direction.x * target_speed, 
+		movement_direction.x * target_speed, 
 		movement_decay, 
 		delta
 	)
 	actor.velocity.z = MathManager.exponential_decay(
 		actor.velocity.z, 
-		actor.movement_direction.z * target_speed, 
+		movement_direction.z * target_speed, 
 		movement_decay, 
 		delta
 	)
 
+
 func update_rotation(delta: float) -> void:
-	# Only rotate if there's a valid movement direction
-	if not actor.movement_direction.is_zero_approx():
+	if not movement_direction.is_zero_approx():
 		var target_transform := actor.pivot.global_transform.looking_at(
-			actor.pivot.global_position + actor.movement_direction, 
+			actor.pivot.global_position + movement_direction, 
 			Vector3.UP, 
 			true
 		)

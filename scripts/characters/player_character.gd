@@ -3,23 +3,19 @@ extends Character
 
 @export var camera_component: ThirdPersonCamera
 
-# Cache the previous input to detect changes and avoid unnecessary calculations
+# Raw input data that states can use
+var input_direction: Vector2 = Vector2.ZERO
 var previous_input_direction: Vector2 = Vector2.ZERO
-var movement_direction_dirty: bool = false
+var input_changed: bool = false
 
 func _physics_process(delta: float) -> void:
-	update_movement_direction()
+	update_input()
 	super._physics_process(delta)
 
-func update_movement_direction() -> void:
+func update_input() -> void:
 	var current_input = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
 	
-	# Only recalculate if input changed
-	if not current_input.is_equal_approx(previous_input_direction):
+	input_changed = not current_input.is_equal_approx(previous_input_direction)
+	if input_changed:
+		input_direction = current_input
 		previous_input_direction = current_input
-		
-		if current_input.is_zero_approx():
-			movement_direction = Vector3.ZERO
-		else:
-			var input_vector = Vector3(current_input.x, 0, current_input.y).normalized()
-			movement_direction = camera_component.horizontal_pivot.global_transform.basis * input_vector
