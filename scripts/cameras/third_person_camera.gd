@@ -2,21 +2,17 @@ class_name ThirdPersonCamera
 extends Node
 
 
-@export_range(0, 100, 1) 
-var spring_arm_length: float = 5
-
-@export_range(0, 1, 0.00025) 
-var mouse_sensitivity: float = 0.00075
-
-@export_range(-360, 360, 10, "degrees") 
-var min_boundary: float = -60:
+@export_range(0, 100, 1) var spring_arm_length: float = 5
+@export_range(0, 1, 0.00025) var mouse_sensitivity: float = 0.00075
+@export_range(-360, 360, 10, "degrees") var min_boundary: float = -60:
 	set(value):
 		min_boundary = deg_to_rad(value)
-		
-@export_range(-360, 360, 10, "degrees") 
-var max_boundary: float = 10:
+@export_range(-360, 360, 10, "degrees") var max_boundary: float = 10:
 	set(value):
 		max_boundary = deg_to_rad(value)
+		
+@export_category("Debugging")
+@export var is_debugging: bool = false
 
 var _look: Vector2 = Vector2.ZERO # stores the x / y direction the player is trying to look in
 
@@ -34,6 +30,7 @@ func _physics_process(delta: float) -> void:
 	vertical_pivot.rotate_x(_look.y)
 	vertical_pivot.rotation.x = clampf(vertical_pivot.rotation.x, min_boundary, max_boundary)
 	spring_arm.global_transform = vertical_pivot.global_transform
+	Logger.info(is_debugging, self, "updating the look value")
 	_look = Vector2.ZERO
 	
 	
