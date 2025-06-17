@@ -29,17 +29,20 @@ func _ready() -> void:
 	spring_arm.spring_length = spring_arm_length
 
 
-func on_unhandled_input(event: InputEvent) -> void:
+func _physics_process(delta: float) -> void:
+	horizontal_pivot.rotate_y(_look.x)
+	vertical_pivot.rotate_x(_look.y)
+	vertical_pivot.rotation.x = clampf(vertical_pivot.rotation.x, min_boundary, max_boundary)
+	spring_arm.global_transform = vertical_pivot.global_transform
+	_look = Vector2.ZERO
+	
+	
+func _unhandled_input(event: InputEvent) -> void:
 	# only works if the mouse isn't seen (captured)
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			_look = -event.relative * mouse_sensitivity
 
 
-func on_physics_process() -> void:
-	horizontal_pivot.rotate_y(_look.x)
-	vertical_pivot.rotate_x(_look.y)
-	vertical_pivot.rotation.x = clampf(vertical_pivot.rotation.x, min_boundary, max_boundary)
-	spring_arm.global_transform = vertical_pivot.global_transform
-	_look = Vector2.ZERO
+
 	
