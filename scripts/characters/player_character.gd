@@ -1,21 +1,21 @@
 class_name PlayerCharacter
 extends Character
 
-@export var camera_component: ThirdPersonCamera
 
-# Raw input data that states can use
-var input_direction: Vector2 = Vector2.ZERO
-var previous_input_direction: Vector2 = Vector2.ZERO
-var input_changed: bool = false
+@export 
+var camera_component: ThirdPersonCamera
+
+## A component that takes care of updating the movement input and loads all the keybinds and their actions
+@export
+var input_controller: InputController
+
+var direction: Vector3 = Vector3.ZERO
+
 
 func _physics_process(delta: float) -> void:
-	update_input()
+	get_direction()
 	super._physics_process(delta)
 
-func update_input() -> void:
-	var current_input = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	
-	input_changed = not current_input.is_equal_approx(previous_input_direction)
-	if input_changed:
-		input_direction = current_input
-		previous_input_direction = current_input
+
+func get_direction() -> void:
+	direction = camera_component.horizontal_pivot.global_transform.basis * input_controller.input_vector
