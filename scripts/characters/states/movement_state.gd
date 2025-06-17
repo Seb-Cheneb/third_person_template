@@ -31,8 +31,15 @@ func _physics_process(delta: float) -> void:
 		update_movement(delta, acceleration)
 		update_rotation(delta)
 	actor.move_and_slide()
-	
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("click"):
+		change_state_signal.emit("SlashAttack")
+	if event.is_action_pressed("right_click"):
+		change_state_signal.emit("HeavyAttack")
 		
+
 ## gradually set the blendspace value to the desired value
 func update_blendspace(delta: float, blendspace_value: float, decay: float) -> void:
 	animation_tree[blendspace] = move_toward(
