@@ -1,8 +1,10 @@
 class_name Character
 extends CharacterBody3D
 
-@export var character_stats: CharacterStats
 @export var pivot: Node3D
+@export var collision_shape: CollisionShape3D
+@export var health_component: HealthComponent
+@export var character_stats: CharacterStats
 @export var gravity_modifier: float = 1.0
 
 

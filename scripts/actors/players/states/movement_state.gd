@@ -21,6 +21,14 @@ extends State
 @export var animation_decay: float = 8.0
 
 
+func _ready() -> void:
+	super._ready()
+	actor.health_component.defeat_signal.connect(
+		func defeat_state() -> void:
+			change_state_signal.emit("Defeat")
+	)
+
+
 func _physics_process(delta: float) -> void:
 	# adjust the animation based on the direction vector of the player
 	if actor.direction.is_zero_approx():

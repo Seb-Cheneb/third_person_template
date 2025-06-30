@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bex3er0v2ca0k"]
+
+[ext_resource type="Script" uid="uid://c8uj23qlg1kfb" path="res://scripts/actors/characters/detector.gd" id="1_ntkya"]
+
+[node name="Detector" type="ShapeCast3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.937024, 0)
+script = ExtResource("1_ntkya")

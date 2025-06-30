@@ -1,21 +1,28 @@
 class_name HealthComponent 
 extends Node
 
-signal defeat
-signal health_changed
+signal defeat_signal
+signal health_changed_signal
 
 @export var body: PhysicsBody3D
+@export var max_health: float
 
-var max_health: float
+@export_category("Debugging")
+@export var is_debugging: bool = false
+
 var current_health: float:
 	get:
 		return current_health
 	set(value):
 		current_health = max(value, 0.0)
 		if current_health == 0.0:
-			defeat.emit()
-		health_changed.emit()
-		print("Current health: ", current_health)
+			defeat_signal.emit()
+		health_changed_signal.emit()
+		Logger.info(is_debugging, self, "health changed by " + str(value))
+
+
+func _ready() -> void:
+	current_health = max_health
 
 
 func update_max_health(_max_hp: float) -> void:
