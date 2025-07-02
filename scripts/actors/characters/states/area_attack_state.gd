@@ -16,22 +16,21 @@ var position: Vector3 = Vector3.ZERO
 
 
 func _ready() -> void:
-	if not actor:
-		Logger.warn(is_debugging, self, "actor not set")
-	if not shape_cast:
-		Logger.warn(is_debugging, self, "shape cast 3D not set")
-	if not animation_name:
-		Logger.warn(is_debugging, self, "animation name not set")
-	if not animation_tree:
-		Logger.warn(is_debugging, self, "animation tree not set")
-	else:
-		# if the tree node has been initialized set the playback value
-		playback = animation_tree["parameters/playback"]
+	var checked_objects: Dictionary = {
+		"actor": actor,
+		"shape cast": shape_cast,
+		"animation name": animation_name,
+		"animation tree": animation_tree		
+	}
+	
+	if Logger.check_objects(is_debugging, self, checked_objects):
+		playback = animation_tree["parameters/playback"] # if the tree node has been initialized set the playback value
 		
 	actor.health_component.defeat_signal.connect(
 		func defeat_state() -> void:
 			change_state_signal.emit("Defeat")
 	)
+	
 	animation_tree.animation_finished.connect(check_animation)
 
 

@@ -21,7 +21,7 @@ git submodule foreach '
   if ! git diff --cached --quiet; then
     echo "Committing and pushing changes in $name..."
     git commit -m "Update submodule: $name"
-    git push origin HEAD
+    git push origin HEAD:'"$DEFAULT_BRANCH"'
   fi
 '
 
@@ -30,4 +30,3 @@ git submodule update --remote --merge
 git add .
 git commit -m "Update submodule pointers to latest commits"
 git push origin main
-
