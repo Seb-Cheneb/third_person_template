@@ -7,6 +7,8 @@ extends CharacterBody3D
 @export var character_stats: CharacterStats
 @export var gravity_modifier: float = 1.0
 
+var direction: Vector3 = Vector3.ZERO
+
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)

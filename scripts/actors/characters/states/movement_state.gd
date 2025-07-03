@@ -2,7 +2,7 @@ class_name MovementState
 extends State
 
 @export_category("Character")
-@export var actor: PlayerCharacter
+@export var actor: Character
 
 @export_category("Movement")
 @export var turn_speed: float = 10.0
