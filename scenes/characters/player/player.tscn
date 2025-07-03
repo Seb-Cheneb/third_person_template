@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://bbuuh1qn4w4xa" path="res://scripts/patterns/design_patterns/state_machine.gd" id="11_bsn6e"]
 [ext_resource type="Script" uid="uid://kke5dl8c88bm" path="res://scripts/actors/players/states/slash_attack_state.gd" id="12_blysn"]
 [ext_resource type="Script" uid="uid://bx3m8exku3u6x" path="res://scripts/actors/players/states/death_state.gd" id="12_ykrpk"]
-[ext_resource type="Script" uid="uid://7jxjo86aa3u2" path="res://scripts/actors/players/states/movement_state.gd" id="13_hv5x3"]
+[ext_resource type="Script" uid="uid://7jxjo86aa3u2" path="res://scripts/actors/players/states/player_movement_state.gd" id="13_hv5x3"]
 [ext_resource type="PackedScene" uid="uid://b60fbii1fjl5y" path="res://scripts/input/input_controller.tscn" id="14_hv5x3"]
 
 [sub_resource type="Resource" id="Resource_blysn"]
