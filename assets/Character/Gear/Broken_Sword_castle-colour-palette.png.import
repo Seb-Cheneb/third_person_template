@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkiaixqfk8v04"
-path.s3tc="res://.godot/imported/Broken_Sword_castle-colour-palette.png-231b49552c72cd4169ae37ead1ed6ead.s3tc.ctex"
+path.etc2="res://.godot/imported/Broken_Sword_castle-colour-palette.png-231b49552c72cd4169ae37ead1ed6ead.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Character/Gear/Broken_Sword_castle-colour-palette.png"
-dest_files=["res://.godot/imported/Broken_Sword_castle-colour-palette.png-231b49552c72cd4169ae37ead1ed6ead.s3tc.ctex"]
+dest_files=["res://.godot/imported/Broken_Sword_castle-colour-palette.png-231b49552c72cd4169ae37ead1ed6ead.etc2.ctex"]
 
 [params]
 

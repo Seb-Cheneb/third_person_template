@@ -1,7 +1,7 @@
 class_name AreaAttackState
 extends State
 
-
+#test
 @export_category("Character")
 @export var actor: Character
 @export var shape_cast: ShapeCast3D

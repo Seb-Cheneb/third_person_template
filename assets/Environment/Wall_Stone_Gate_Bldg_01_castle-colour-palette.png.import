@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ws144wqsd7y3"
-path.s3tc="res://.godot/imported/Wall_Stone_Gate_Bldg_01_castle-colour-palette.png-f2d74d75bca2f98a564491a9219a3631.s3tc.ctex"
+path.etc2="res://.godot/imported/Wall_Stone_Gate_Bldg_01_castle-colour-palette.png-f2d74d75bca2f98a564491a9219a3631.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Environment/Wall_Stone_Gate_Bldg_01_castle-colour-palette.png"
-dest_files=["res://.godot/imported/Wall_Stone_Gate_Bldg_01_castle-colour-palette.png-f2d74d75bca2f98a564491a9219a3631.s3tc.ctex"]
+dest_files=["res://.godot/imported/Wall_Stone_Gate_Bldg_01_castle-colour-palette.png-f2d74d75bca2f98a564491a9219a3631.etc2.ctex"]
 
 [params]
 

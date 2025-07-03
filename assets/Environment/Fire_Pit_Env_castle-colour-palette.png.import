@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://yeqq4cakisnn"
-path.s3tc="res://.godot/imported/Fire_Pit_Env_castle-colour-palette.png-f261350b2ad2655faa5b38e22e2d657b.s3tc.ctex"
+path.etc2="res://.godot/imported/Fire_Pit_Env_castle-colour-palette.png-f261350b2ad2655faa5b38e22e2d657b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Environment/Fire_Pit_Env_castle-colour-palette.png"
-dest_files=["res://.godot/imported/Fire_Pit_Env_castle-colour-palette.png-f261350b2ad2655faa5b38e22e2d657b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Fire_Pit_Env_castle-colour-palette.png-f261350b2ad2655faa5b38e22e2d657b.etc2.ctex"]
 
 [params]
 

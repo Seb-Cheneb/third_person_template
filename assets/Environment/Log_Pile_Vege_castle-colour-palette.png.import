@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cwonk1s6cu4kl"
-path.s3tc="res://.godot/imported/Log_Pile_Vege_castle-colour-palette.png-99d573d3956ce9987fa4d6fbe01aee02.s3tc.ctex"
+path.etc2="res://.godot/imported/Log_Pile_Vege_castle-colour-palette.png-99d573d3956ce9987fa4d6fbe01aee02.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Environment/Log_Pile_Vege_castle-colour-palette.png"
-dest_files=["res://.godot/imported/Log_Pile_Vege_castle-colour-palette.png-99d573d3956ce9987fa4d6fbe01aee02.s3tc.ctex"]
+dest_files=["res://.godot/imported/Log_Pile_Vege_castle-colour-palette.png-99d573d3956ce9987fa4d6fbe01aee02.etc2.ctex"]
 
 [params]
 

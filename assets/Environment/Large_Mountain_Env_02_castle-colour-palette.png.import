@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnkblariwr0p6"
-path.s3tc="res://.godot/imported/Large_Mountain_Env_02_castle-colour-palette.png-0d5eb1d3e708252a36d9334b0dff845a.s3tc.ctex"
+path.etc2="res://.godot/imported/Large_Mountain_Env_02_castle-colour-palette.png-0d5eb1d3e708252a36d9334b0dff845a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Environment/Large_Mountain_Env_02_castle-colour-palette.png"
-dest_files=["res://.godot/imported/Large_Mountain_Env_02_castle-colour-palette.png-0d5eb1d3e708252a36d9334b0dff845a.s3tc.ctex"]
+dest_files=["res://.godot/imported/Large_Mountain_Env_02_castle-colour-palette.png-0d5eb1d3e708252a36d9334b0dff845a.etc2.ctex"]
 
 [params]
 

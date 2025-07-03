@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uxu8bcmeemb3"
-path.s3tc="res://.godot/imported/House_Modular_01_castle-colour-palette.png-9dfd0217d0f6e4e591b7e21d99bbd533.s3tc.ctex"
+path.etc2="res://.godot/imported/House_Modular_01_castle-colour-palette.png-9dfd0217d0f6e4e591b7e21d99bbd533.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Environment/House_Modular_01_castle-colour-palette.png"
-dest_files=["res://.godot/imported/House_Modular_01_castle-colour-palette.png-9dfd0217d0f6e4e591b7e21d99bbd533.s3tc.ctex"]
+dest_files=["res://.godot/imported/House_Modular_01_castle-colour-palette.png-9dfd0217d0f6e4e591b7e21d99bbd533.etc2.ctex"]
 
 [params]
 

@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buqqab24fiqj7"
-path.s3tc="res://.godot/imported/Vine_Vege_01_castle-colour-palette.png-07ded60ce6141561d31b76a2cd5bd6b3.s3tc.ctex"
+path.etc2="res://.godot/imported/Vine_Vege_01_castle-colour-palette.png-07ded60ce6141561d31b76a2cd5bd6b3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Environment/Vine_Vege_01_castle-colour-palette.png"
-dest_files=["res://.godot/imported/Vine_Vege_01_castle-colour-palette.png-07ded60ce6141561d31b76a2cd5bd6b3.s3tc.ctex"]
+dest_files=["res://.godot/imported/Vine_Vege_01_castle-colour-palette.png-07ded60ce6141561d31b76a2cd5bd6b3.etc2.ctex"]
 
 [params]
 

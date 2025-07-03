@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjg36gus7258q"
-path.s3tc="res://.godot/imported/House_Modular_01_Castle-metallic.png-Castle-roughness.png-8fa1eb0e403894bd93e164639a2fefcb.s3tc.ctex"
+path.etc2="res://.godot/imported/House_Modular_01_Castle-metallic.png-Castle-roughness.png-8fa1eb0e403894bd93e164639a2fefcb.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/Environment/House_Modular_01_Castle-metallic.png-Castle-roughness.png"
-dest_files=["res://.godot/imported/House_Modular_01_Castle-metallic.png-Castle-roughness.png-8fa1eb0e403894bd93e164639a2fefcb.s3tc.ctex"]
+dest_files=["res://.godot/imported/House_Modular_01_Castle-metallic.png-Castle-roughness.png-8fa1eb0e403894bd93e164639a2fefcb.etc2.ctex"]
 
 [params]
 
